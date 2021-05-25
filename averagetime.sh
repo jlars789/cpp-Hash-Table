@@ -1,0 +1,20 @@
+#!/bin/bash
+
+read DICT
+
+read GRID
+
+RUNNING_TIME_1=`./a.out ${DICT} ${GRID} | tail -1`
+RUNNING_TIME_2=`./a.out ${DICT} ${GRID} | tail -1`
+RUNNING_TIME_3=`./a.out ${DICT} ${GRID} | tail -1`
+RUNNING_TIME_4=`./a.out ${DICT} ${GRID} | tail -1`
+RUNNING_TIME_5=`./a.out ${DICT} ${GRID} | tail -1`
+
+RUNNING_TIME_2=$(($RUNNING_TIME_1 + $RUNNING_TIME_2))
+RUNNING_TIME_3=$(($RUNNING_TIME_2 + $RUNNING_TIME_3))
+RUNNING_TIME_4=$(($RUNNING_TIME_3 + $RUNNING_TIME_4))
+RUNNING_TIME_5=$(($RUNNING_TIME_4 + $RUNNING_TIME_5))
+
+RUNNING_TIME=$(($RUNNING_TIME_5 / 5))
+
+echo $RUNNING_TIME
